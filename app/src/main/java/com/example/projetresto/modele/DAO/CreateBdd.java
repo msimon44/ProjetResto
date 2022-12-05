@@ -9,12 +9,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class CreateBDD {
-
-
-
-
-
 
     public class CreateBdd extends SQLiteOpenHelper {
 
@@ -46,4 +40,4 @@ public class CreateBDD {
     }
 
 
-}
+
