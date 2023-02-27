@@ -30,7 +30,7 @@ public class DAOResto extends DAOModele {
         return db.insert(TABLE_resto, null, values);
     }
 
-    public static resto cursorToLac(Cursor c) { //Cette méthode permet de convertir un cursor en un lac
+    public static resto cursorToResto(Cursor c) { //Cette méthode permet de convertir un cursor en un lac
         //si aucun élément n'a été retourné dans la requête, on renvoie null
         if (c.getCount() == 0)
             return null;
@@ -49,12 +49,12 @@ public class DAOResto extends DAOModele {
     public static resto getRestoByNom(String nomResto) {
         //Récupère dans un Cursor les valeurs correspondant à un article grâce à sa designation)
         Cursor c = db.query(TABLE_resto, new String[]{COL_ID_RESTO, COL_NOM_RESTO, COL_VILLE_RESTO}, COL_NOM_RESTO + " LIKE \"" + nomResto + "\"", null, null, null, null);
-        return cursorToLac(c);
+        return cursorToResto(c);
     }
 
 
     public static Cursor getAll() {
-        return db.rawQuery("SELECT * FROM tlac ORDER BY NomLac", null);
+        return db.rawQuery("SELECT * FROM tresto ORDER BY NomResto", null);
     }
 
 
