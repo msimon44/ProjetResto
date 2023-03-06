@@ -19,7 +19,7 @@ import com.example.projetresto.modele.metier.resto;
 
             DAOResto restoBdd = new DAOResto(this);
             restoBdd.open();
-            if (restoBdd.getAll().getCount() == 0) {
+            if (DAOResto.getAll().getCount() == 0) {
                 //si la bdd est vide on remplit la table lac et la table releve avec des exemples
                 remplirTableResto();
             }
@@ -31,16 +31,16 @@ import com.example.projetresto.modele.metier.resto;
             DAOResto restoBdd = new DAOResto(this);
             restoBdd.open();
 
-            resto resto1 = new resto(1, "L'entrepote", "Bordeaux");
-            resto resto2 = new resto(2, "Le bar du charcutier", "Bordeaux");
-            resto resto3 = new resto(3, "Sapporo", "Bordeaux");
-            resto resto4 = new resto(4, "Cidrerie du fronton", "Arbonne");
-            resto resto5 = new resto(5, "Agadir", "Bayonne");
-            resto resto6 = new resto(6, "Le Bistrot Sainte Cluque", "Bayonne");
-            resto resto7 = new resto(7, "La petite auberge", "Bayonne");
-            resto resto8 = new resto(8, "La table de POTTOKA", "Bayonne");
-            resto resto9 = new resto(9, "La Rotisserie du Roy Léon", "Bayonne");
-            resto resto10 = new resto(10, "Bar du Marché", "Bayonne");
+            resto resto1 = new resto("L'entrepote", "Bordeaux");
+            resto resto2 = new resto("Le bar du charcutier", "Bordeaux");
+            resto resto3 = new resto("Sapporo", "Bordeaux");
+            resto resto4 = new resto("Cidrerie du fronton", "Arbonne");
+            resto resto5 = new resto("Agadir", "Bayonne");
+            resto resto6 = new resto("Le Bistrot Sainte Cluque", "Bayonne");
+            resto resto7 = new resto("La petite auberge", "Bayonne");
+            resto resto8 = new resto("La table de POTTOKA", "Bayonne");
+            resto resto9 = new resto("La Rotisserie du Roy Léon", "Bayonne");
+            resto resto10 = new resto("Bar du Marché", "Bayonne");
             //on ouvre la base de données
 
             //on insère tous les lacs
@@ -55,7 +55,7 @@ import com.example.projetresto.modele.metier.resto;
             DAOResto.insererResto(resto9);
             DAOResto.insererResto(resto10);
             //le curseur pour afficher ensuite le nombre de Lac dans la base
-            Cursor c = restoBdd.getAll();
+            Cursor c = DAOResto.getAll();
             Toast.makeText(getApplicationContext(), "nombre de restaurants dans la bdd : " + c.getCount(), Toast.LENGTH_LONG).show();
             restoBdd.close();
         }

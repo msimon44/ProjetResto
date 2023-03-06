@@ -23,7 +23,6 @@ public class DAOResto extends DAOModele {
         //Création d'un ContentValues (fonctionne comme une HashMap)
         ContentValues values = new ContentValues();
         //on lui ajoute une valeur associé à une clé (qui est le nom de la colonne où on veut mettre la valeur)
-        values.put(COL_ID_RESTO, unResto.getIdR());
         values.put(COL_NOM_RESTO, unResto.getNomR());
         values.put(COL_VILLE_RESTO, unResto.getVilleR());
         //on insère l'objet dans la BDD via le ContentValues
@@ -36,9 +35,8 @@ public class DAOResto extends DAOModele {
             return null;
         //Sinon
         c.moveToFirst(); //on se place sur le premier élément
-        resto unResto = new resto(0, null, null); //On créé un lac
+        resto unResto = new resto(null, null); //On créé un lac
         //on lui affecte toutes les infos grâce aux infos contenues dans le Cursor
-        unResto.setIdR(c.getInt(1));
         unResto.setNomR(c.getString(2));
         unResto.setVilleR(c.getString(3));
         c.close(); //On ferme le cursor
@@ -54,7 +52,7 @@ public class DAOResto extends DAOModele {
 
 
     public static Cursor getAll() {
-        return db.rawQuery("SELECT * FROM tresto ORDER BY NomResto", null);
+        return db.rawQuery("SELECT * FROM tresto ORDER BY nomR", null);
     }
 
 
