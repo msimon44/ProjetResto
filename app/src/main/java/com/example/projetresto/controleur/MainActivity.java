@@ -1,7 +1,10 @@
 package com.example.projetresto.controleur;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -59,5 +62,39 @@ import com.example.projetresto.modele.metier.resto;
             Toast.makeText(getApplicationContext(), "nombre de restaurants dans la bdd : " + c.getCount(), Toast.LENGTH_LONG).show();
             restoBdd.close();
         }
+
+        //on associe à un objet java de type Button, un widget repéré physiquement par son id
+        Button btnListe = findViewById(R.id.button1);
+        Button btnContacter = findViewById(R.id.button2);
+        Button btnConnecter = findViewById(R.id.button3);
+        //on va créer écouteur pour tous les boutons
+        View.OnClickListener ecouteur = new View.OnClickListener() {
+            //on implémente la méthode onclick
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()) {
+                    case R.id.button1:
+                        //code correspondant au clic sur le bouton enregistrer
+                        Intent intent1 = new Intent(MainActivity.this, ListeRestoActivity.class);
+                        startActivity(intent1);
+                        break;
+
+                    case R.id.button2:
+                        Intent intent2 = new Intent(MainActivity.this, NousContacterActivity.class);
+                       startActivity(intent2);
+                        break;
+                    case R.id.button3:
+                        Intent intent3 = new Intent(MainActivity.this, SeConnecterActivity.class);
+                        startActivity(intent3);
+
+
+                        finish();
+                        break;
+                }
+            }
+
+        };
+
+
     }
 
