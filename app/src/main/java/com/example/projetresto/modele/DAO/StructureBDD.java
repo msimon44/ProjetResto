@@ -6,7 +6,7 @@ public class StructureBDD {
 
     public static final String TABLE_resto = "tresto";
 
-    public static final String COL_ID_RESTO = "idR";
+    public static final String COL_ID_RESTO = "_id";
 
     public static final String COL_NOM_RESTO = "nomR";
 

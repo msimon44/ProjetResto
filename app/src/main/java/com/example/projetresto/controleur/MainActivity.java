@@ -1,7 +1,10 @@
 package com.example.projetresto.controleur;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +28,24 @@ import com.example.projetresto.modele.metier.resto;
             }
 
 
+            Button btnListeResto = findViewById(R.id.button2);
+
+            View.OnClickListener ecouteur = new View.OnClickListener() {
+                //on implémente la méthode onclick
+                @Override
+                public void onClick(View v) {
+                    switch (v.getId()) {
+                        case R.id.button2:
+                            //code correspondant au clic sur le bouton enregistrer
+                            Intent intent1 = new Intent(MainActivity.this, ListeRestoActivity.class);
+                            startActivity(intent1);
+                            break;
+                    }
+                }
+
+            };
+
+            btnListeResto.setOnClickListener(ecouteur);
         }
 
         private void remplirTableResto() {
