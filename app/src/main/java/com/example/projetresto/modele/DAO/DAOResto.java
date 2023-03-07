@@ -35,7 +35,7 @@ public class DAOResto extends DAOModele {
             return null;
         //Sinon
         c.moveToFirst(); //on se place sur le premier élément
-        resto unResto = new resto(0, null, null); //On créé un lac
+        resto unResto = new resto(null, null); //On créé un lac
         //on lui affecte toutes les infos grâce aux infos contenues dans le Cursor
         unResto.setNomR(c.getString(2));
         unResto.setVilleR(c.getString(3));

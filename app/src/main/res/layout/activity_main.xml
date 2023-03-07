@@ -28,7 +28,7 @@
             app:srcCompat="@drawable/ic_baseline_remove_24" />
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/buttonConnecter"
             android:layout_width="300dp"
             android:layout_height="55dp"
             android:layout_centerHorizontal="true"
@@ -43,7 +43,7 @@
             app:srcCompat="@drawable/ic_baseline_remove_24" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonListe"
             android:layout_width="300dp"
             android:layout_height="55dp"
             android:layout_centerHorizontal="true"
@@ -58,7 +58,7 @@
             app:srcCompat="@drawable/ic_baseline_remove_24" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/buttonContacter"
             android:layout_width="300dp"
             android:layout_height="55dp"
             android:layout_centerHorizontal="true"

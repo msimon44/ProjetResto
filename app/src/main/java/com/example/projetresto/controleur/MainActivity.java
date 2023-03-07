@@ -27,6 +27,43 @@ import com.example.projetresto.modele.metier.resto;
                 remplirTableResto();
             }
 
+            //on associe à un objet java de type Button, un widget repéré physiquement par son id
+            Button btnListe = findViewById(R.id.buttonListe);
+            Button btnContacter = findViewById(R.id.buttonContacter);
+            Button btnConnecter = findViewById(R.id.buttonConnecter);
+            //on va créer écouteur pour tous les boutons
+            View.OnClickListener ecouteur = new View.OnClickListener() {
+                //on implémente la méthode onclick
+                @Override
+                public void onClick(View v) {
+                    switch (v.getId()) {
+                        case R.id.buttonListe:
+                            //code correspondant au clic sur le bouton enregistrer
+                            Intent intent1 = new Intent(MainActivity.this, ListeRestoActivity.class);
+                            startActivity(intent1);
+                            break;
+
+                        case R.id.buttonContacter:
+                            Intent intent2 = new Intent(MainActivity.this, NousContacterActivity.class);
+                            startActivity(intent2);
+                            break;
+                        case R.id.buttonConnecter:
+                            Intent intent3 = new Intent(MainActivity.this, SeConnecterActivity.class);
+                            startActivity(intent3);
+
+
+                            finish();
+                            break;
+                    }
+                }
+
+            };
+            //on affecte au bouton l'écouteur
+            btnListe.setOnClickListener(ecouteur);
+            btnContacter.setOnClickListener(ecouteur);
+            btnConnecter.setOnClickListener(ecouteur);
+
+
 
         }
 
@@ -34,16 +71,16 @@ import com.example.projetresto.modele.metier.resto;
             DAOResto restoBdd = new DAOResto(this);
             restoBdd.open();
 
-            resto resto1 = new resto(1, "L'entrepote", "Bordeaux");
-            resto resto2 = new resto(2, "Le bar du charcutier", "Bordeaux");
-            resto resto3 = new resto(3, "Sapporo", "Bordeaux");
-            resto resto4 = new resto(4, "Cidrerie du fronton", "Arbonne");
-            resto resto5 = new resto(5, "Agadir", "Bayonne");
-            resto resto6 = new resto(6, "Le Bistrot Sainte Cluque", "Bayonne");
-            resto resto7 = new resto(7, "La petite auberge", "Bayonne");
-            resto resto8 = new resto(8, "La table de POTTOKA", "Bayonne");
-            resto resto9 = new resto(9, "La Rotisserie du Roy Léon", "Bayonne");
-            resto resto10 = new resto(10, "Bar du Marché", "Bayonne");
+            resto resto1 = new resto("L'entrepote", "Bordeaux");
+            resto resto2 = new resto("Le bar du charcutier", "Bordeaux");
+            resto resto3 = new resto("Sapporo", "Bordeaux");
+            resto resto4 = new resto("Cidrerie du fronton", "Arbonne");
+            resto resto5 = new resto("Agadir", "Bayonne");
+            resto resto6 = new resto("Le Bistrot Sainte Cluque", "Bayonne");
+            resto resto7 = new resto("La petite auberge", "Bayonne");
+            resto resto8 = new resto("La table de POTTOKA", "Bayonne");
+            resto resto9 = new resto("La Rotisserie du Roy Léon", "Bayonne");
+            resto resto10 = new resto("Bar du Marché", "Bayonne");
             //on ouvre la base de données
 
             //on insère tous les lacs
@@ -63,37 +100,8 @@ import com.example.projetresto.modele.metier.resto;
             restoBdd.close();
         }
 
-        //on associe à un objet java de type Button, un widget repéré physiquement par son id
-        Button btnListe = findViewById(R.id.button1);
-        Button btnContacter = findViewById(R.id.button2);
-        Button btnConnecter = findViewById(R.id.button3);
-        //on va créer écouteur pour tous les boutons
-        View.OnClickListener ecouteur = new View.OnClickListener() {
-            //on implémente la méthode onclick
-            @Override
-            public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.button1:
-                        //code correspondant au clic sur le bouton enregistrer
-                        Intent intent1 = new Intent(MainActivity.this, ListeRestoActivity.class);
-                        startActivity(intent1);
-                        break;
-
-                    case R.id.button2:
-                        Intent intent2 = new Intent(MainActivity.this, NousContacterActivity.class);
-                       startActivity(intent2);
-                        break;
-                    case R.id.button3:
-                        Intent intent3 = new Intent(MainActivity.this, SeConnecterActivity.class);
-                        startActivity(intent3);
 
 
-                        finish();
-                        break;
-                }
-            }
-
-        };
 
 
     }
