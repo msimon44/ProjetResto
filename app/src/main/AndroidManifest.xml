@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetResto"
         tools:targetApi="31" >
+        <activity
+            android:name=".controleur.ListeRestoActivity"
+            android:exported="true" />
 
         <activity
             android:name=".controleur.MainActivity"

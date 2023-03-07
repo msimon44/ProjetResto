@@ -21,7 +21,9 @@ public class ListeRestoActivity  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste);
 
-        ListView listViewInfoResto = findViewById(R.id.listViewInfosResto);
+
+
+        ListView listViewInfoResto = findViewById(R.id.listViewInfoResto);
 
         DAOResto restoBdd = new DAOResto(this);
         restoBdd.open();

@@ -10,6 +10,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.projetresto.R;
+import com.example.projetresto.modele.DAO.DAODetail;
+import com.example.projetresto.modele.metier.detailResto;
+
 import com.example.projetresto.modele.DAO.DAOResto;
 import com.example.projetresto.modele.metier.resto;
 
@@ -80,5 +83,6 @@ import com.example.projetresto.modele.metier.resto;
             Toast.makeText(getApplicationContext(), "nombre de restaurants dans la bdd : " + c.getCount(), Toast.LENGTH_LONG).show();
             restoBdd.close();
         }
+
     }
 
