@@ -10,7 +10,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.projetresto.R;
+import com.example.projetresto.modele.DAO.DAODetail;
 import com.example.projetresto.modele.DAO.DAOResto;
+import com.example.projetresto.modele.metier.detailResto;
 import com.example.projetresto.modele.metier.resto;
 
     public class MainActivity extends AppCompatActivity {
@@ -98,6 +100,40 @@ import com.example.projetresto.modele.metier.resto;
             Cursor c = restoBdd.getAll();
             Toast.makeText(getApplicationContext(), "nombre de restaurants dans la bdd : " + c.getCount(), Toast.LENGTH_LONG).show();
             restoBdd.close();
+        }
+
+
+        private void remplirTableDetailresto() {
+            DAODetail detailBdd = new DAODetail(this);
+            detailBdd.open();
+
+            detailResto detail1 = new detailResto("sud ouest", "2 rue Maurice Ravel");
+            detailResto detail2 = new detailResto("sud ouest", "30 rue Parlement Sainte-Catherine");
+            detailResto detail3 = new detailResto("Orientale", "33 rue Saint Rémi");
+            detailResto detail4 = new detailResto("sud ouest / sandwich / grillade", "Place du Fronton");
+            detailResto detail5 = new detailResto("orientale", "3 Rue Sainte-Catherine");
+            detailResto detail6 = new detailResto("viande", "9 Rue Hugues");
+            detailResto detail7 = new detailResto("vegan", "15 rue des cordeliers");
+            detailResto detail8 = new detailResto("grillade", "21 Quai Amiral Dubourdieu");
+            detailResto detail9 = new detailResto("viande", "8 rue de coursic");
+            detailResto detail10 = new detailResto("vegan", "39 Rue des Basques");
+            //on ouvre la base de données
+
+            //on insère tous les lacs
+            DAODetail.insererDetail(detail1);
+            DAODetail.insererDetail(detail2);
+            DAODetail.insererDetail(detail3);
+            DAODetail.insererDetail(detail4);
+            DAODetail.insererDetail(detail5);
+            DAODetail.insererDetail(detail6);
+            DAODetail.insererDetail(detail7);
+            DAODetail.insererDetail(detail8);
+            DAODetail.insererDetail(detail9);
+            DAODetail.insererDetail(detail10);
+            //le curseur pour afficher ensuite le nombre de Lac dans la base
+            Cursor c = detailBdd.getAll();
+            Toast.makeText(getApplicationContext(), "nombre de restaurants dans la bdd : " + c.getCount(), Toast.LENGTH_LONG).show();
+            detailBdd.close();
         }
 
 

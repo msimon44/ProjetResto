@@ -13,4 +13,15 @@ public class StructureBDD {
     public static final String COL_VILLE_RESTO = "villeR";
 
 
+    public static final String TABLE_detail = "tdetail";
+
+    public static final String COL_ID_DETAIL = "_id";
+
+    public static final String COL_ADRESSE_DETAIL = "adresseResto";
+
+    public static final String COL_TYPE_DETAIL = "typeResto";
+
+    public static final String COL_RESTO_DETAIL = "restoDetail";
+
+
 }

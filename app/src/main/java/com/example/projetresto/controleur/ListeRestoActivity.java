@@ -1,7 +1,10 @@
 package com.example.projetresto.controleur;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
@@ -34,5 +37,17 @@ public class ListeRestoActivity extends AppCompatActivity {
         //on attribue cet adapterView (ce type d'affichage) à la listeView
         listViewInfosResto.setAdapter(dataAdapter);
 
+
+        listViewInfosResto.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(ListeRestoActivity.this, DetailsActivity.class);
+                startActivity(intent);
+            }
+
+        });
     }
+
+
+
 }
