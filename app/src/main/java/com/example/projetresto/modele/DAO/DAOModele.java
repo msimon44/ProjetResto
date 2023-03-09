@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 public class DAOModele {
-    static final int VERSION_BDD = 2;
+    static final int VERSION_BDD = 4;
     private static final String NOM_BDD = "bddResto.db";
 
     protected final CreateBdd tableCourante;

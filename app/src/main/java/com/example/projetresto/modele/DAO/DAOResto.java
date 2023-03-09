@@ -1,8 +1,10 @@
 package com.example.projetresto.modele.DAO;
 
 
+import static com.example.projetresto.modele.DAO.StructureBDD.COL_ADRESSE_DETAIL;
 import static com.example.projetresto.modele.DAO.StructureBDD.COL_ID_RESTO;
 import static com.example.projetresto.modele.DAO.StructureBDD.COL_NOM_RESTO;
+import static com.example.projetresto.modele.DAO.StructureBDD.COL_TYPE_DETAIL;
 import static com.example.projetresto.modele.DAO.StructureBDD.COL_VILLE_RESTO;
 import static com.example.projetresto.modele.DAO.StructureBDD.TABLE_resto;
 
@@ -25,6 +27,8 @@ public class DAOResto extends DAOModele {
         //on lui ajoute une valeur associé à une clé (qui est le nom de la colonne où on veut mettre la valeur)
         values.put(COL_NOM_RESTO, unResto.getNomR());
         values.put(COL_VILLE_RESTO, unResto.getVilleR());
+        values.put(COL_TYPE_DETAIL, unResto.getTypeResto());
+        values.put(COL_ADRESSE_DETAIL, unResto.getAdresseResto());
         //on insère l'objet dans la BDD via le ContentValues
         return db.insert(TABLE_resto, null, values);
     }
@@ -35,10 +39,12 @@ public class DAOResto extends DAOModele {
             return null;
         //Sinon
         c.moveToFirst(); //on se place sur le premier élément
-        resto unResto = new resto(null, null); //On créé un lac
+        resto unResto = new resto(null, null, null  , null); //On créé un lac
         //on lui affecte toutes les infos grâce aux infos contenues dans le Cursor
-        unResto.setNomR(c.getString(2));
-        unResto.setVilleR(c.getString(3));
+        unResto.setNomR(c.getString(1));
+        unResto.setVilleR(c.getString(2));
+        unResto.setTypeResto(c.getString(3));
+        unResto.setAdresseResto(c.getString(4));
         c.close(); //On ferme le cursor
         return unResto; //On retourne le restp
 
@@ -46,7 +52,7 @@ public class DAOResto extends DAOModele {
 
     public static resto getRestoByNom(String nomResto) {
         //Récupère dans un Cursor les valeurs correspondant à un article grâce à sa designation)
-        Cursor c = db.query(TABLE_resto, new String[]{COL_NOM_RESTO, COL_VILLE_RESTO}, COL_NOM_RESTO + " LIKE \"" + nomResto + "\"", null, null, null, null);
+        Cursor c = db.query(TABLE_resto, new String[]{COL_NOM_RESTO, COL_VILLE_RESTO, COL_ADRESSE_DETAIL, COL_TYPE_DETAIL}, COL_NOM_RESTO + " LIKE \"" + nomResto + "\"", null, null, null, null);
         return cursorToResto(c);
     }
 
