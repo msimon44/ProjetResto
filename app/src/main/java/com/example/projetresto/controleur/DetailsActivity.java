@@ -62,16 +62,16 @@ public class DetailsActivity extends AppCompatActivity {
             spinnerAfficheResto.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                    // Integer numlac = Math.toIntExact(spinnerAfficheLac.getSelectedItemId());
+
                     nomResto = valueOf(spinnerAfficheResto.getSelectedItem());
                     //Remplissage des champs pour le détail d'un resto.
-                    resto Resto =restobdd.getRestoByNom(nomResto);
-                    TextView typeResto = findViewById(R.id.TypeResto);
+                   resto Resto = restobdd.getRestoByNom(nomResto);
+                   TextView typeResto = findViewById(R.id.TypeResto);
                     typeResto.setText("le type du Resto est : "+valueOf(Resto.getTypeResto()));
                     TextView adresse = findViewById(R.id.AdrResto);
-                    adresse.setText("la latitude est : "+valueOf(Resto.getAdresseResto()));
+                    adresse.setText("l'adresse exacte du resto est : "+valueOf(Resto.getAdresseResto()));
                     TextView ville = findViewById(R.id.VilleResto);
-                    ville.setText("La ville du Resto est : "+valueOf(Resto.getAdresseResto()));
+                    ville.setText("La ville du Resto est : "+valueOf(Resto.getVilleR()));
                 }
 
                 @Override
@@ -80,6 +80,7 @@ public class DetailsActivity extends AppCompatActivity {
                 }
 
             });
+
         }
 
 

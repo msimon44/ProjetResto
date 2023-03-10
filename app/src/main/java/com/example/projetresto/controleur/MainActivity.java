@@ -51,6 +51,7 @@ import com.example.projetresto.modele.metier.resto;
                         case R.id.buttonConnecter:
                             Intent intent3 = new Intent(MainActivity.this, SeConnecterActivity.class);
                             startActivity(intent3);
+                            break;
 
                         case R.id.buttonDetail:
                             Intent intent4 = new Intent(MainActivity.this, DetailsActivity.class);

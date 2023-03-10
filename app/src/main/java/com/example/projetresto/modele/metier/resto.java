@@ -46,6 +46,16 @@ public class resto {
     public void setAdresseResto(String adresseResto) {
         this.adresseResto = adresseResto;
     }
+
+    @Override
+    public String toString() {
+        return "resto{" +
+                "nomR='" + nomR + '\'' +
+                ", villeR='" + villeR + '\'' +
+                ", typeResto='" + typeResto + '\'' +
+                ", adresseResto='" + adresseResto + '\'' +
+                '}';
+    }
 }
 
 

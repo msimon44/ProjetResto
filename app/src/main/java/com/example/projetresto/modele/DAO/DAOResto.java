@@ -52,13 +52,21 @@ public class DAOResto extends DAOModele {
 
     public static resto getRestoByNom(String nomResto) {
         //Récupère dans un Cursor les valeurs correspondant à un article grâce à sa designation)
-        Cursor c = db.query(TABLE_resto, new String[]{COL_NOM_RESTO, COL_VILLE_RESTO, COL_ADRESSE_DETAIL, COL_TYPE_DETAIL}, COL_NOM_RESTO + " LIKE \"" + nomResto + "\"", null, null, null, null);
+        Cursor c = db.query(TABLE_resto, new String[] {COL_ID_RESTO,COL_NOM_RESTO, COL_VILLE_RESTO, COL_ADRESSE_DETAIL, COL_TYPE_DETAIL}, COL_NOM_RESTO + " LIKE \"" + nomResto + "\"", null, null, null, null);
+        //Cursor c = db.query(TABLE_LAC, new String[] {COL_ID_LAC,COL_NOM_LAC, COL_LONGITUDE, COL_LATITUDE}, COL_NOM_LAC + " LIKE \"" + nomLac +"\"", null, null, null, null);
         return cursorToResto(c);
     }
 
+   /** public static Cursor getAllByNomResto(String unResto){
+        //problème avec les dates sans 0 devant 3/10 ne marche pas 03/10 fonctionne
+        String $sql = "SELECT * FROM treleve WHERE NomR='"+unResto+"'";
+        return db.rawQuery($sql,null);
+
+    }
+*/
 
     public static Cursor getAll() {
-        return db.rawQuery("SELECT * FROM tresto ORDER BY NomR", null);
+        return db.rawQuery("SELECT * FROM tresto ORDER BY nomR", null);
     }
 
 
