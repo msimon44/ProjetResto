@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background3"
+    tools:context=".controleur.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-16dp">
+
+        <ImageView
+            android:layout_width="154dp"
+            android:layout_height="99dp"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/logo" />
+
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="170dp"
+            app:srcCompat="@drawable/ic_baseline_remove_24" />
+
+        <Button
+            android:id="@+id/buttonInscription"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="360dp"
+            android:text="S'inscrire" />
+
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="250dp"
+            app:srcCompat="@drawable/ic_baseline_remove_24" />
+
+        <Button
+            android:id="@+id/buttonListe"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="200dp"
+            android:text="Liste des Restaurants" />
+
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="330dp"
+            app:srcCompat="@drawable/ic_baseline_remove_24" />
+
+        <Button
+            android:id="@+id/buttonReservation"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="280dp"
+            android:text="Réserver" />
+
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="410dp"
+            app:srcCompat="@drawable/ic_baseline_remove_24" />
+
+        <Button
+            android:id="@+id/buttonDetail"
+            android:layout_width="300dp"
+            android:layout_height="55dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="440dp"
+            android:text="Détail resto" />
+
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="480dp"
+            app:srcCompat="@drawable/ic_baseline_remove_24" />
+
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
